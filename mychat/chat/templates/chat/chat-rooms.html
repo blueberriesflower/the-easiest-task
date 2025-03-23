@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Комнаты чата</h2>
+  {% if chat_rooms %}
+    <ul>
+      {% for room in chat_rooms %}
+        <li><a href="#">{{ room.name }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Вы еще не состоите ни в одной комнате чата.</p>
+  {% endif %}
+  <p><a href="{% url 'logout' %}">Выйти</a></p>
+{% endblock %}
